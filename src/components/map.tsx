@@ -23,11 +23,9 @@ export const ServiceMap = (props: Props) => {
     const handleChangeIcon = (currentIcon: string) => {
         if (currentIcon == 'bus') {
             setCurrentIcon('taxi')
-            console.log(currentIcon)
         }
         if (currentIcon == 'taxi') {
             setCurrentIcon('bus')
-            console.log(currentIcon)
         }
 
     }
@@ -45,8 +43,8 @@ export const ServiceMap = (props: Props) => {
             const el = document.createElement('div');
             el.className = 'marker'
             el.style.backgroundImage = (currentIcon == 'bus') ? `url(${bus})` : `url(${taxi})`
-            el.style.width = '30px'
-            el.style.height = '30px'
+            el.style.width = '25px'
+            el.style.height = '25px'
             el.style.backgroundSize = '100%'
             map && new mapboxgl.Marker({ element: el }).setLngLat([d.coords[0], d.coords[1]])
                 .addTo(map);
@@ -58,7 +56,10 @@ export const ServiceMap = (props: Props) => {
 
     return (
         <>
-            Click para cambiar de transporte: <button onClick={() => handleChangeIcon(currentIcon)}>Visualizar : {currentIcon}</button>
+            <div className="alert alert-primary" role="alert">
+                Click para cambiar de transporte: &emsp;
+                <button type="button" className="btn btn-primary btn-lg active" onClick={() => handleChangeIcon(currentIcon)}> K{currentIcon.toUpperCase()}</button>
+            </div>
             <div className="div-container" style={mapContainerStyle()}>
                 <div id='map' style={{ width: '100%', height: '100%', position: 'absolute', borderRadius: '5px', overflow: 'hidden' }}></div>
             </div>
@@ -70,7 +71,7 @@ const mapContainerStyle = () => ({
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     textAlign: 'center',
     margin: '40px',
-    width: '1600px',
+    width: '1255px',
     height: '500px',
     position: 'relative',
     borderRadius: '5px'
