@@ -1,5 +1,4 @@
 import { createContext } from 'react';
-import './App.css';
 import InteractiveMap from './components/interactiveMap';
 
 function App() {
