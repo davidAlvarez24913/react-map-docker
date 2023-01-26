@@ -16,7 +16,7 @@ export default function Home() {
       <h2
         style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
       >
-        Tecnologías Implementadas
+        Plataformas Implementadas
       </h2>
       <div
         style={{
